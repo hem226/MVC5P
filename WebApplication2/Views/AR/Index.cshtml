@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<hr />
+
+<h3>載入圖片</h3>
+
+<a href="~/Content/Jordan.jpg" ><img src="~/Content/Jordan.jpg" alt="" /></a>
+@using (Html.BeginForm("FileTest", "AR", FormMethod.Post))
+{
+    <!-- form goes here -->
+
+    <input type="submit" value="Download" />
+}

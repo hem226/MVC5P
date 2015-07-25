@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@@Ajax Test</h2>
+
+<hr />
+
+@Ajax.ActionLink("取得目前時間", "GetDateTime", new AjaxOptions { UpdateTargetId = "now" })
+<div id="now"></div>

@@ -1,0 +1,27 @@
+﻿@{
+    int[] num = new int[] { 1, 2, 3, 4, 5 };
+
+    foreach (var item in num)
+    {
+        @item
+    }
+    <text></text>
+   
+    foreach (var item in num)
+    {
+        @(@item + " ")
+    }
+    <text></text>
+        foreach (var item in num)
+        {
+<text>@item</text>
+    }
+
+<ul>
+  @foreach (var item in num)
+  {
+<text>  </text><li>@item</li>
+  }
+</ul>
+}
+
