@@ -25,7 +25,17 @@ namespace WebApplication2
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/PagedList.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                        "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/newlayout-jquery").Include(
+                        "~/js/jquery-1.9.1.min.js",
+                        "~/js/jquery-migrate-1.0.0.min.js",
+                        "~/js/jquery-ui-1.10.0.custom.min.js",
+                        "~/js/jquery.ui.touch-punch.js"));
         }
     }
 }

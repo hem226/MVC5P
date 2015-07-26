@@ -117,12 +117,17 @@ namespace WebApplication2.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product,
+            HttpPostedFileBase ImageUrl_File)
         {
             if (ModelState.IsValid)
             {
                 //db.Entry(product).State = EntityState.Modified;
                 //db.SaveChanges();
+                string filePath = "~/Content/Upload/" + product.ProductId + ".jpg";
+                ImageUrl_File.SaveAs(Server.MapPath(filePath));
+                product.ImageUrl = Url.Content(filePath);
+
                 ((FabricsEntities)repo.UnitOfWork.Context).Entry(product).State = EntityState.Modified;
                 repo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
